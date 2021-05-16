@@ -152,7 +152,7 @@
           </div>
         </div>
         <div class="contact-right">
-          <form action="https://script.google.com/macros/s/AKfycby5camwI5PVH7yH_8j20ghxQsNZe3u-22nE513OMFQ4X9sOtfJ-Ezkv1uV_lBV8cpYm/exec" method="post" class="signin-form" id="gform">
+          <form action=""  class="signin-form" id="submit-form">
             <div class="input-grids">
               <input type="text" name="name" id="w3lName" placeholder="Your Name*" class="contact-input"
                 required="" />
@@ -313,7 +313,27 @@
       });
     </script>
     <!--//MENU-JS-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+      $("#submit-form").submit((e)=>{
+          e.preventDefault()
+          $.ajax({
+              url:"https://script.google.com/macros/s/AKfycbw20t0hIzDmuJxZFkacAcCR0P6APPrfJPdCMeiums2WFo6c58othqNhuTb85BvsUP4/exec",
+              data:$("#submit-form").serialize(),
+              method:"post",
+              success:function (response){
+                  alert("Form submitted successfully")
+                  window.location.reload()
+                  //window.location.href="https://google.com"
+              },
+              error:function (err){
+                  alert("Something Error")
+  
+              }
+          })
+      })
+  </script>
   
   </body>
   

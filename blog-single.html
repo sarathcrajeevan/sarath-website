@@ -6,12 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="keywords"
     content="Reprise Responsive web template, Bootstrap Web Templates" />
+    
   <title>Sarathrajeevan | Home </title>
+  
   <link href="//fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
   <link href="//fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-liberty.css">
+  
+  
+  
+  
 </head>
 <body>
   <!-- header -->
@@ -390,26 +396,26 @@
               <div class="leave-comment-form mt-lg-0 mt-5" id="comment">
                 <h4 class="mag-side-title">Leave a <span>Reply</span></h4>
                 <p class="mb-4">Your email address will not be published. Required fields are marked *</p>
-                <form action="https://script.google.com/macros/s/AKfycby5camwI5PVH7yH_8j20ghxQsNZe3u-22nE513OMFQ4X9sOtfJ-Ezkv1uV_lBV8cpYm/exec" method="post" id="gform">
-                  <div class="form-group">
+                <form    id="submit-form" action="" >
+                 <div class="form-group">
                     <label>Comment</label>
-                    <textarea name="Comment" class="form-control" placeholder="Your Comment" required=""
+                    <textarea name="comment" class="form-control" placeholder="Your Comment" required=""
                       spellcheck="false"></textarea>
                   </div>
                   <div class="input-grids row">
 
                     <div class="form-group col-lg-6">
                       <label>Name *</label>
-                      <input type="text" name="Name" class="form-control" placeholder="Your Name" required="">
+                      <input type="name" name="name" class="form-control" placeholder="Your Name" required="">
                     </div>
                     <div class="form-group col-lg-6">
                       <label>Email *</label>
-                      <input type="email" name="Email" class="form-control" placeholder="Email" required="">
+                      <input type="email" name="email" class="form-control" placeholder="Email" required="">
                     </div>
                   </div>
                   <div class="form-group">
                     <label>From</label>
-                    <input type="text" name="Email" class="form-control" placeholder="Work / Institution / Place" required="">
+                    <input type="message" name="message" class="form-control" placeholder="Work / Institution / Place" required="">
                   </div>
                   <div class="form-input">
                     <label class="container">
@@ -465,6 +471,7 @@
           </div>
         </div>
       </div>
+      
       <!-- move top -->
       <button onclick="topFunction()" id="movetop" title="Go to top">
         &uarr;
@@ -494,7 +501,8 @@
     </footer>
     <!-- Footers-14 -->
     <!-- Template JavaScript -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+    
     <script src="assets/js/theme-change.js"></script>
      <!--/carousel-->
     <script src="assets/js/owl.carousel.js"></script>
@@ -538,6 +546,7 @@
       });
     </script>
     <!-- disable body scroll which navbar is in active -->
+   
   
   
     <!--/MENU-JS-->
@@ -569,7 +578,27 @@
     </script>
     <!--//MENU-JS-->
     <script src="assets/js/bootstrap.min.js"></script>
+    
+    
+    <script>
+      $("#submit-form").submit((e)=>{
+          e.preventDefault()
+          $.ajax({
+              url:"https://script.google.com/macros/s/AKfycbyxIWX0GGseVt9iYVdxk1G6ZmAtWdk_Z4FzaLy8ODarEddychUi-y-Yo5qZsaTOrBQU/exec",
+              data:$("#submit-form").serialize(),
+              method:"post",
+              success:function (response){
+                  alert("Form submitted successfully")
+                  window.location.reload()
+                  //window.location.href="https://google.com"
+              },
+              error:function (err){
+                  alert("Something Error")
   
+              }
+          })
+      })
+  </script>
   </body>
   
   </html>
