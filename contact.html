@@ -165,7 +165,26 @@
               <textarea name="message" id="w3lMessage" placeholder="Type your message here*" required=""></textarea>
             </div>
             <div class="submit-w3l-button text-lg-right">
-              <button class="btn btn-style btn-primary">Send Message</button>
+              <button data-toggle="modal" data-target="#exampleModal" class="btn btn-style btn-primary">Send Message</button>
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Contact </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Thank you! Your message has been successfully sent.
+                    </div>
+                    <div class="modal-footer">
+                      
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </form>
         </div>
@@ -325,7 +344,7 @@
               data:$("#submit-form").serialize(),
               method:"post",
               success:function (response){
-                  alert("Form submitted successfully")
+                  ("#exampleModal")
                   window.location.reload()
                   //window.location.href="https://google.com"
               },

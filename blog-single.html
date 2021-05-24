@@ -181,8 +181,8 @@
             <div class="blog-pt-grid-content blog-post-main">
               <div class="maghny-gd-1 blog-pt-grid mb-5">
                 <h5 class="blog-title mb-3"><a href="#">Fam bill 2020 and concerns</a></h5>
-                <div class="mag-post-meta my-3"><a href="#"><img src="assets/images/person.jpg"
-                      class="img-fluid admin-img-blog" alt=""></a> <span
+                <div class="mag-post-meta my-3"><a href="#"><img src=""
+                      class="" alt=""></a> <span
                     class="meta-author text-uppercase"><span>By&nbsp;</span><a href="index.html" class="author-name">
                       SARATH RAJEEVAN</a> </span>
                   <span class="author-date ml-2">Sep 30, 2020</span>
@@ -425,8 +425,13 @@
                     </label>
                   </div>
                   <div class="submit text-right mt-5">
-                    <button class="btn btn-primary btn-style">Post Comment
-                    </button></div>
+                    
+                    <button data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-style">Post comment</button>
+              
+                    
+                  </div>
+                  
+                    
                 </form>
               </div>
               <!--//leave-->
@@ -588,7 +593,8 @@
               data:$("#submit-form").serialize(),
               method:"post",
               success:function (response){
-                  alert("Form submitted successfully")
+                (exampleModal)
+                  
                   window.location.reload()
                   //window.location.href="https://google.com"
               },
@@ -599,6 +605,25 @@
           })
       })
   </script>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Contact </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Thank you! Your message has been successfully sent.
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
   
   </html>
